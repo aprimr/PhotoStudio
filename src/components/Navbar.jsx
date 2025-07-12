@@ -11,18 +11,17 @@ function Navbar() {
       className="fixed top-4 left-0 right-0 z-50 flex justify-center"
     >
       <div className="bg-white/90 dark:bg-black/70 backdrop-blur-md rounded-full shadow-md border border-gray-200/50 dark:border-gray-700/50 px-5 py-2.5 flex gap-5 sm:gap-6 items-center select-none">
-        {/* Dock Icons */}
-        <DockIcon label="Home" to="/" />
-        <DockIcon label="Gallery" to="/gallery" />
-        <DockIcon label="About" to="/about" />
-        <DockIcon label="Contact" to="/contact" />
+        <DockItem label="Home" to="/" />
+        <DockItem label="Gallery" to="/gallery" />
+        <DockItem label="About" to="/about" />
+        <DockItem label="Contact" to="/contact" />
         <ThemeToggle />
       </div>
     </motion.div>
   );
 }
 
-function DockIcon({ label, to }) {
+function DockItem({ label, to }) {
   return (
     <NavLink
       tabIndex={-1}
@@ -36,9 +35,9 @@ function DockIcon({ label, to }) {
       }
     >
       <motion.span
-        className="text-sm md:text-base duration-200 font-poppins group-hover:opacity-95"
+        className="text-[14px] md:text-sm duration-200 font-poppins"
         tabIndex={-1}
-        whileHover={{ scale: 1.05 }}
+        whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >

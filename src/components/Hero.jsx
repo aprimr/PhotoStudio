@@ -7,32 +7,18 @@ import HeroVideo from "../assets/herovideo.mp4";
 function Hero() {
   return (
     <div className="w-full h-screen bg-white dark:bg-black flex flex-col justify-center items-center relative overflow-hidden">
-      {/* Background glow effects */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-      >
+      {/* Background glow effects - static */}
+      <div>
         <div className="absolute top-[28%] left-[30%] w-96 h-64 rounded-full bg-blue-100/40 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
         <div className="absolute top-[33%] right-[30%] w-96 h-64 rounded-full bg-blue-100/40 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
         <div className="absolute bottom-[11%] left-[27%] w-64 h-64 rounded-full bg-blue-100/80 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
-      </motion.div>
+      </div>
 
       <div className="max-w-7xl w-full h-full flex flex-col justify-center items-center px-4 sm:px-6 md:px-8">
         {/* Floating Service Cards - Desktop */}
         <div className="hidden lg:flex flex-col w-full h-full items-center justify-center px-4 py-8 relative z-20 gap-6">
           {/* Photography Card */}
-          <motion.div
-            className="bg-white/60 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl p-5 shadow-2xl border border-gray-100 dark:border-gray-700 w-full max-w-xs sm:w-72 z-20 overflow-hidden relative sm:absolute sm:bottom-[8%] sm:left-[0%] mx-auto mb-6 sm:mb-0"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8, type: "spring" }}
-            whileHover={{
-              y: -8,
-              scale: 1.03,
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-            }}
-          >
+          <div className="bg-white/60 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl p-5 shadow-2xl border border-gray-100 dark:border-gray-700 w-full max-w-xs sm:w-72 z-20 overflow-hidden relative sm:absolute sm:bottom-[8%] sm:left-[0%] mx-auto mb-6 sm:mb-0">
             <div className="grid grid-cols-2 gap-2 mb-4">
               <img
                 src={Hero1}
@@ -51,20 +37,10 @@ function Hero() {
             <p className="text-sm text-gray-600 dark:text-gray-300 font-poppins">
               Personal, wedding, product, event photography
             </p>
-          </motion.div>
+          </div>
 
           {/* Videography Card */}
-          <motion.div
-            className="bg-white/60 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl p-5 shadow-2xl border border-gray-100 dark:border-gray-700 w-full max-w-xs sm:w-72 z-20 overflow-hidden relative sm:absolute sm:bottom-[20%] sm:right-[0%] mx-auto"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8, type: "spring" }}
-            whileHover={{
-              y: -8,
-              scale: 1.03,
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-            }}
-          >
+          <div className="bg-white/60 dark:bg-gray-900/40 backdrop-blur-lg rounded-2xl p-5 shadow-2xl border border-gray-100 dark:border-gray-700 w-full max-w-xs sm:w-72 z-20 overflow-hidden relative sm:absolute sm:bottom-[20%] sm:right-[0%] mx-auto">
             <div
               className="relative w-full max-w-xl mx-auto rounded-xl overflow-hidden shadow-lg ring-1 ring-gray-200 dark:ring-gray-700 mb-1"
               style={{ paddingTop: "56.25%" }}
@@ -86,12 +62,12 @@ function Hero() {
               Videos for weddings, commercials, events, and promotional
               purposes.
             </p>
-          </motion.div>
+          </div>
         </div>
 
-        {/* Animated Text */}
+        {/* Animated Text (kept as requested) */}
         <motion.div
-          className="absolute top-[14rem] w-full text-center"
+          className="absolute top-[12rem] w-full text-center"
           initial="hidden"
           animate="visible"
           variants={{
@@ -130,7 +106,7 @@ function Hero() {
                     type: "spring",
                     damping: 15,
                     stiffness: 100,
-                    delay: 0.2,
+                    delay: 0.6,
                   },
                 },
               }}
@@ -149,7 +125,7 @@ function Hero() {
                     type: "spring",
                     damping: 15,
                     stiffness: 100,
-                    delay: 0.4,
+                    delay: 0.6,
                   },
                 },
               }}
@@ -159,41 +135,20 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Camera image */}
-        <motion.div
-          className="absolute top-[11rem] w-full flex items-center justify-center"
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            type: "spring",
-            damping: 10,
-            stiffness: 80,
-            delay: 0.5,
-            duration: 1,
-          }}
-        >
+        {/* Camera image - static */}
+        <div className="absolute top-[10rem] w-full flex items-center justify-center">
           <img
             src={Camera}
             className="h-auto max-h-[50vh] sm:max-h-[70vh] md:max-h-[80vh] w-auto max-w-full object-contain z-10"
             alt="Professional Camera"
           />
-        </motion.div>
+        </div>
       </div>
 
       {/* Floating Service Cards - Mobile */}
-      <div className="sm:hidden w-full  h-2/3 absolute bottom-0 left-0 px-4 py-4">
+      <div className="sm:hidden w-full h-[55%] absolute bottom-0 left-0 px-4 py-4">
         {/* Photography Card */}
-        <motion.div
-          className="bg-white/80 dark:bg-gray-900/40 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-52 z-20 left-4"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
-          whileHover={{
-            y: -4,
-            scale: 1.01,
-            boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)",
-          }}
-        >
+        <div className="bg-white/80 dark:bg-gray-900/40 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute top-0 z-20 left-4">
           <div className="grid grid-cols-2 gap-2 mb-2">
             <img
               src={Hero1}
@@ -212,20 +167,10 @@ function Hero() {
           <p className="text-xs text-gray-600 dark:text-gray-300">
             Personal, wedding, product, event photography
           </p>
-        </motion.div>
+        </div>
 
         {/* Videography Card */}
-        <motion.div
-          className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-2 z-0 right-4"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6, type: "spring" }}
-          whileHover={{
-            y: -4,
-            scale: 1.01,
-            boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)",
-          }}
-        >
+        <div className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-10 z-0 right-4">
           <div
             className="relative w-full rounded-md overflow-hidden mb-2"
             style={{ paddingTop: "56.25%" }}
@@ -247,22 +192,13 @@ function Hero() {
           <p className="text-xs text-gray-600 dark:text-gray-300">
             Videos for weddings, commercials, events, and promotional purposes.
           </p>
-        </motion.div>
+        </div>
       </div>
+
       {/* Floating Service Cards - tablet */}
-      <div className="hidden sm:flex lg:hidden  w-full h-2/3 absolute bottom-0 left-0 px-4 py-4">
+      <div className="hidden sm:flex lg:hidden w-full h-2/3 absolute bottom-0 left-0 px-4 py-4">
         {/* Photography Card */}
-        <motion.div
-          className="bg-white/80 dark:bg-gray-900/40 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-44 z-20 left-4"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.6, type: "spring" }}
-          whileHover={{
-            y: -4,
-            scale: 1.01,
-            boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)",
-          }}
-        >
+        <div className="bg-white/80 dark:bg-gray-900/40 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-44 z-20 left-4">
           <div className="grid grid-cols-2 gap-2 mb-2">
             <img
               src={Hero1}
@@ -281,20 +217,10 @@ function Hero() {
           <p className="text-xs text-gray-600 dark:text-gray-300">
             Personal, wedding, product, event photography
           </p>
-        </motion.div>
+        </div>
 
         {/* Videography Card */}
-        <motion.div
-          className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-1 z-0 right-4"
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.6, type: "spring" }}
-          whileHover={{
-            y: -4,
-            scale: 1.01,
-            boxShadow: "0 10px 20px -5px rgba(0,0,0,0.1)",
-          }}
-        >
+        <div className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-1 z-0 right-4">
           <div
             className="relative w-full rounded-md overflow-hidden mb-2"
             style={{ paddingTop: "56.25%" }}
@@ -316,7 +242,7 @@ function Hero() {
           <p className="text-xs text-gray-600 dark:text-gray-300">
             Videos for weddings, commercials, events, and promotional purposes.
           </p>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

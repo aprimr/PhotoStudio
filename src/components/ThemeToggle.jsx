@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -24,7 +25,7 @@ const ThemeToggle = () => {
   const toggleTheme = () => setIsDark((prev) => !prev);
 
   return (
-    <div
+    <motion.div
       tabIndex={-1}
       onClick={toggleTheme}
       role="button"
