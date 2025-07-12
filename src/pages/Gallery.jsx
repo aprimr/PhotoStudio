@@ -81,12 +81,8 @@ function Gallery() {
     };
   }, [viewImage]);
 
-  useEffect(() => {}, [viewImage]);
-
   return (
-    <div
-      className={`w-full min-h-screen bg-white dark:bg-black flex flex-col items-center overflow-hidden select-none relative`}
-    >
+    <div className="w-full min-h-screen bg-white dark:bg-black flex flex-col items-center overflow-hidden select-none relative">
       <div className="max-w-7xl w-full min-h-screen flex flex-col items-center px-4 sm:px-6 md:px-8 pt-28 pb-16">
         {/* Title */}
         <div className="text-center">
@@ -181,14 +177,15 @@ function Gallery() {
               alt="Preview"
               className="max-w-[90%] max-h-[80vh] rounded-lg shadow-2xl"
             />
-            <p className="text-xs md:text-sm text-black dark:text-white mt-4 font-poppins">
+            <p className="text-xs md:text-sm text-black/80 dark:text-white/80 mt-4 font-poppins">
               Tap outside{" "}
               <span className="inline-block md:hidden">the image</span>
               <span className="hidden md:inline-block">or press Esc</span> to
               close image
             </p>
           </div>
-        </div>)}
+        </div>
+      )}
     </div>
   );
 }

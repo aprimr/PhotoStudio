@@ -6,7 +6,7 @@ import HeroVideo from "../assets/herovideo.mp4";
 
 function Hero() {
   return (
-    <div className="w-full h-screen bg-white dark:bg-black flex flex-col justify-center items-center relative overflow-hidden">
+    <div className="w-full h-screen bg-white dark:bg-black flex flex-col justify-center items-center relative overflow-hidden select-none">
       {/* Background glow effects - static */}
       <div>
         <div className="absolute top-[28%] left-[30%] w-96 h-64 rounded-full bg-blue-100/40 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
