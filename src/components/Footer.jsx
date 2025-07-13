@@ -67,7 +67,7 @@ function Footer() {
               className="flex items-center gap-3 text-gray-300 dark:text-gray-700 hover:text-blue-400 dark:hover:text-blue-400 transition"
             >
               <Mail className="w-5 h-5" />
-              delightphotostudio@gmail.com
+              studio@gmail.com
             </a>
           </div>
 
