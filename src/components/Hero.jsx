@@ -65,7 +65,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Animated Text (kept as requested) */}
+        {/* Animated Text */}
         <motion.div
           className="absolute top-[12rem] w-full text-center"
           initial="hidden"
