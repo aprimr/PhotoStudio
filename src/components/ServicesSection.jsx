@@ -2,43 +2,41 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaCameraRetro } from "react-icons/fa";
 import { Image, Clapperboard, Package, Printer, Users } from "lucide-react";
-
 const services = [
   {
     icon: <Users />,
     title: "Event Photography",
     description:
-      "We capture your special events like weddings and birthdays with beautiful, emotion-filled photos you'll cherish forever.",
+      "We capture your special events with beautiful photos you'll always remember.",
   },
   {
     icon: <FaCameraRetro className="text-2xl" />,
     title: "Studio Portraits",
     description:
-      "Creative and professional portraits for individuals, couples, and families taken in a comfortable studio environment.",
+      "Portraits of individuals, couples, and families in a comfortable studio.",
   },
   {
     icon: <Clapperboard />,
     title: "Videography",
     description:
-      "Story-driven, cinematic videos for weddings, events, and businesses with smooth editing and beautiful visuals.",
+      "Videos for weddings, events, and businesses with smooth lighting and beautiful visuals.",
   },
   {
     icon: <Package />,
     title: "Product Photography",
-    description:
-      "High-quality product photos that help your items shine on social media, websites, and online stores.",
+    description: "High quality photos that make your products shine.",
   },
   {
     icon: <Image />,
     title: "Passport Photos",
     description:
-      "Fast and accurate passport and ID photos that are official, clear, and print-ready within minutes.",
+      "Passport size and ID photos that are official, clear, and print-ready within minutes.",
   },
   {
     icon: <Printer />,
     title: "Printing & Framing",
     description:
-      "We print, frame, and laminate your photos using premium materials for lasting quality and beauty.",
+      "We print, frame, and laminate your photos using premium materials for lasting quality.",
   },
 ];
 
@@ -96,7 +94,7 @@ function ServicesSection() {
               ></div>
 
               {/* Card content */}
-              <div className="absolute left-[1.5px] top-[1.5px] w-[calc(100%-3px)] h-[calc(100%-3px)] rounded-2xl bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-900 dark:to-black z-10 p-6 text-white flex flex-col">
+              <div className="absolute left-[1.5px] top-[1.5px] w-[calc(100%-3px)] h-[calc(100%-3px)] rounded-2xl bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-950 dark:to-black z-10 p-6 text-white flex flex-col">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="bg-blue-200/40 dark:bg-blue-500/20 text-black dark:text-white p-2 rounded-md flex-shrink-0">
                     {service.icon}
@@ -105,7 +103,7 @@ function ServicesSection() {
                     {service.title}
                   </h3>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 text-[15px] font-poppins leading-relaxed">
+                <p className="text-gray-500 dark:text-gray-400 text-[15px] sm:text-[13px] md:text-[18px] font-poppins leading-relaxed">
                   {service.description}
                 </p>
               </div>
