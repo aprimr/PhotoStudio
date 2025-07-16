@@ -1,5 +1,6 @@
 import AboutSection from "../components/AboutSection";
 import Hero from "../components/Hero";
+import ServicesSection from "../components/ServicesSection";
 import StatsSection from "../components/StatsSection";
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
       <Hero />
       <AboutSection />
       <StatsSection />
+      <ServicesSection />
     </>
   );
 }

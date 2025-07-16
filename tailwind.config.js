@@ -15,6 +15,15 @@ export default {
         dmsans: ["DM Sans", "sans-serif"],
         urbanist: ["Urbanist", "sans-serif"],
       },
+      animation: {
+        spin: "spin 5s linear infinite",
+      },
+      keyframes: {
+        spin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
+      },
     },
   },
   plugins: [],

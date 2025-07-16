@@ -7,3 +7,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Services card animation */
+.card-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem; 
+  background: linear-gradient(to bottom, #334155, #1e293b);
+  width: 350px; 
+  height: 200px; 
+  margin: 2rem auto;
+}
+
+
+.card-wrapper::before {
+  content: '';
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(192, 132, 252, 0.4) 10deg,
+    rgba(104, 230, 255, 0.4) 40deg,
+    transparent 120deg
+);
+
+  animation: border-spin 5s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.card-content {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 1rem;
+  background: linear-gradient(to bottom, #1e293b, #0f172a); 
+  z-index: 1;
+  padding: 1rem;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* border animation*/
+@keyframes border-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

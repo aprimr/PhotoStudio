@@ -135,7 +135,7 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Camera image - static */}
+        {/* Camera image */}
         <div className="absolute top-[10rem] w-full flex items-center justify-center">
           <img
             src={Camera}
@@ -170,7 +170,7 @@ function Hero() {
         </div>
 
         {/* Videography Card */}
-        <div className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-10 z-0 right-4">
+        <div className="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md w-60 rounded-xl p-3 shadow-lg border border-gray-100 dark:border-gray-700 absolute bottom-20 z-0 right-4">
           <div
             className="relative w-full rounded-md overflow-hidden mb-2"
             style={{ paddingTop: "56.25%" }}
