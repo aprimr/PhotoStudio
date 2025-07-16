@@ -1,131 +1,130 @@
 import { NavLink } from "react-router-dom";
-import { MapPin, Phone, Mail } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import { MapPin, Phone, Mail, Camera } from "lucide-react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa";
 
-function Footer() {
+const Footer = () => {
+  const quickLinks = [
+    { name: "Gallery", path: "/gallery" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact", path: "/contact" },
+    { name: "Blog", path: "/blog" },
+  ];
+
+  const services = [
+    "Photography",
+    "Videography",
+    "Event Coverage",
+    "Product Photography",
+    "Photo Printing",
+  ];
+
+  const contactInfo = [
+    { icon: <MapPin size={18} />, text: "Nepal" },
+    { icon: <Phone size={18} />, text: "+977 9812345678" },
+    { icon: <Mail size={18} />, text: "hello@studio.com" },
+  ];
+
+  const socialLinks = [
+    { icon: <FaFacebook size={20} />, name: "Facebook", url: "#" },
+    { icon: <FaInstagram size={20} />, name: "Instagram", url: "#" },
+    { icon: <FaTiktok size={20} />, name: "TikTok", url: "#" },
+    { icon: <FaYoutube size={20} />, name: "YouTube", url: "#" },
+    { icon: <FaWhatsapp size={20} />, name: "WhatsApp", url: "#" },
+  ];
+
   return (
-    <footer className="bg-white dark:bg-black text-sm select-none">
-      {/* Top Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-10 pb-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 border-t border-gray-200 dark:border-white/10 bg-black dark:bg-white rounded-tl-[2rem] rounded-tr-[2rem]">
-        {/* Info */}
-        <div className="space-y-4 md:col-span-2">
-          <NavLink
-            to="/"
-            className="text-3xl font-bold font-montserrat tracking-tight text-white dark:text-black"
-          >
-            DELIGHT STUDIO
-          </NavLink>
-          <p className="text-gray-200 dark:text-gray-900 font-poppins leading-relaxed max-w-md">
-            We offer professional photography for weddings, portraits, events,
-            and products — along with videography and essential studio services
-            like photo printing, lamination, passport photos, and more. From
-            special moments to everyday studio needs, we’re here with quality
-            and care.
-          </p>
-          <div className="flex items-center gap-2 ">
-            <MapPin className="w-auto h-5 text-gray-300 dark:text-gray-700" />
-            <p className="text-gray-300 dark:text-gray-900 font-poppins">
-              Nepal
+    <footer className="bg-white dark:bg-black pt-16">
+      <div className="max-w-7xl bg-black dark:bg-white mx-auto px-4 pt-10 pb-4 sm:px-6 lg:px-8 rounded-t-3xl">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-8">
+          {/* Info */}
+          <div className="space-y-6">
+            <div className="flex items-center space-x-2">
+              <span className="text-2xl font-bold text-white dark:text-black font-raleway">
+                DELIGHT STUDIO
+              </span>
+            </div>
+            <p className="text-gray-400 dark:text-gray-600 leading-relaxed">
+              Capturing life's precious moments with creativity and passion.
+              Professional photography services for all occasions in Nepal.
             </p>
-          </div>
-        </div>
-
-        {/* Navigation */}
-        <div>
-          <h3 className="text-lg font-semibold uppercase tracking-wider mb-4 font-raleway text-white dark:text-black">
-            Navigation
-          </h3>
-          <ul className="space-y-3 font-poppins">
-            {["Gallery", "Services", "About", "Contact"].map((item) => (
-              <li key={item}>
-                <NavLink
-                  to={`/${item.toLowerCase()}`}
-                  className="text-gray-300 dark:text-gray-800 hover:text-blue-400 dark:hover:text-blue-400 transition duration-200"
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.url}
+                  className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300"
+                  aria-label={social.name}
                 >
-                  {item}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Contact & Socials */}
-        <div className="space-y-8">
-          <div className="space-y-3 font-poppins">
-            <h3 className="text-lg font-semibold uppercase tracking-wider mb-2 font-raleway text-white dark:text-black">
-              Contact
-            </h3>
-            <a
-              href="tel:+9779812345678"
-              className="flex items-center gap-3 text-gray-300 dark:text-gray-700 hover:text-blue-400 dark:hover:text-blue-400 transition"
-            >
-              <Phone className="w-5 h-5" />
-              +977 9812345678
-            </a>
-            <a
-              href="mailto:delightphotostudio@gmail.com"
-              className="flex items-center gap-3 text-gray-300 dark:text-gray-700 hover:text-blue-400 dark:hover:text-blue-400 transition"
-            >
-              <Mail className="w-5 h-5" />
-              studio@gmail.com
-            </a>
-          </div>
-
-          <div className="space-y-3 font-poppins">
-            <h3 className="text-lg font-semibold uppercase tracking-wider font-raleway text-white dark:text-black">
-              Follow Us
-            </h3>
-            <div className="flex gap-5 text-xl text-gray-300 dark:text-gray-800">
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                aria-label="Facebook"
-                rel="noreferrer"
-                className="hover:text-blue-600"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="https://www.tiktok.com"
-                target="_blank"
-                aria-label="TikTok"
-                rel="noreferrer"
-                className="hover:text-white dark:hover:text-black"
-              >
-                <FaTiktok />
-              </a>
-              <a
-                href="https://www.instagram.com"
-                target="_blank"
-                aria-label="Instagram"
-                rel="noreferrer"
-                className="hover:text-pink-500"
-              >
-                <FaInstagram />
-              </a>
-
-              <a
-                href="https://wa.me/9779812345678"
-                target="_blank"
-                aria-label="WhatsApp"
-                rel="noreferrer"
-                className="hover:text-green-500"
-              >
-                <FaWhatsapp />
-              </a>
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto bg-black dark:bg-white py-5 px-4">
-        <p className="text-center text-xs md:text-sm font-poppins text-gray-100/80 dark:text-gray-700">
-          © {new Date().getFullYear()} Delight Studio. All rights reserved.
-        </p>
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+              Quick Links
+            </h3>
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <NavLink
+                    to={link.path}
+                    className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300"
+                  >
+                    {link.name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+              Our Services
+            </h3>
+            <ul className="space-y-3">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <span className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300 cursor-pointer">
+                    {service}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+              Contact Us
+            </h3>
+            <ul className="space-y-4">
+              {contactInfo.map((info, index) => (
+                <li key={index} className="flex items-start space-x-3">
+                  <span className="mt-0.5 text-gray-400 dark:text-gray-600">
+                    {info.icon}
+                  </span>
+                  <span className="text-gray-400 dark:text-gray-600">
+                    {info.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   );
-}
+};
 
 export default Footer;
