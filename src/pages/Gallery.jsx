@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { X } from "lucide-react";
+import { Phone, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
 function Gallery() {
@@ -119,7 +119,7 @@ function Gallery() {
         </motion.p>
 
         {/* Image Grid */}
-        <div className="w-full max-w-6xl mt-10 columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
+        <div className="w-full max-w-7xl mt-10 columns-2 sm:columns-3 md:columns-4 gap-4 space-y-4">
           {imageUrls.map((url, index) => (
             <motion.img
               whileHover={{ scale: 1.02 }}
@@ -144,7 +144,7 @@ function Gallery() {
         </motion.p>
 
         {/* Video Grid */}
-        <div className="w-full max-w-6xl mt-8 columns-1 md:columns-2 gap-6 space-y-6">
+        <div className="w-full max-w-7xl mt-8 columns-1 md:columns-2 gap-6 space-y-6">
           {videoUrls.map((url, index) => (
             <iframe
               key={index}
@@ -158,6 +158,67 @@ function Gallery() {
               allowFullScreen
             ></iframe>
           ))}
+        </div>
+
+        {/* Enhanced CTA Section with Improved Light Mode */}
+        <div className="w-full max-w-7xl mx-auto mt-16">
+          <div className="relative bg-gradient-to-b from-gray-200 to-gray-50 dark:from-neutral-900 dark:to-gray-800 rounded-2xl shadow-xl dark:shadow-2xl overflow-hidden">
+            {/* Blurred Decorative Background */}
+            <div className="absolute inset-0 pointer-events-none -z-10">
+              <div className="absolute -top-8 -left-8 w-24 h-24 md:w-40 md:h-40 bg-blue-300/50 dark:bg-blue-400/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-12 -right-12 w-48 h-48 md:w-72 md:h-72 bg-indigo-300/50 dark:bg-indigo-500/20 rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 p-5 md:p-10 z-10">
+              {/* Text Content */}
+              <div className="flex flex-col justify-center space-y-5">
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-urbanist text-gray-900 dark:text-white">
+                  Did You Like{" "}
+                  <span className="text-blue-600 dark:text-blue-400 block md:inline">
+                    Our Work?
+                  </span>
+                </h2>
+
+                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-xl">
+                  Whether it's a studio shoot, outdoor session, portrait,
+                  product shoot, or event coverage — we do it all. Let's create
+                  something unforgettable.
+                </p>
+
+                {/* Call btn */}
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0">
+                  <a
+                    href="tel:1234567890"
+                    className="px-6 py-3 md:px-8 md:py-3 text-center bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full active:scale-95 transition-all duration-300 shadow-lg hover:shadow-blue-500/30 dark:shadow-blue-600/30"
+                  >
+                    CALL US
+                  </a>
+                  <a
+                    href="mailto:example@example.com"
+                    className="px-6 py-3 md:px-8 md:py-3 text-center border-2 border-blue-600 text-blue-600 font-bold rounded-full "
+                  >
+                    CONTACT US
+                  </a>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div className="hidden lg:flex items-center justify-center">
+                <div className="relative w-full h-64 rounded-xl overflow-hidden shadow-inner border border-gray-200 dark:border-gray-600">
+                  <img
+                    src="https://images.unsplash.com/photo-1604232936651-76ea165a1881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+                    alt="Photography session example"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Glow */}
+            <div className="lg:hidden absolute bottom-0 right-0 w-32 h-32 bg-blue-400/20 rounded-full blur-lg pointer-events-none"></div>
+          </div>
         </div>
       </div>
 

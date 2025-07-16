@@ -33,12 +33,10 @@ export const DragCards = () => {
           <motion.div
             whileHover={{
               scale: 1.1,
-              backgroundColor: "rgb(59 130 246)",
-              rotate: 45,
+              rotate: 30,
             }}
             whileTap={{
               scale: 0.95,
-              backgroundColor: "rgb(37 99 235)",
             }}
             transition={{
               type: "spring",
@@ -49,8 +47,8 @@ export const DragCards = () => {
               },
             }}
             onClick={() => navigate("/gallery")}
-            className="p-2 rounded-full text-gray-700 dark:text-gray-300 cursor-pointer
-           hover:text-white dark:hover:text-gray-900"
+            className="p-2 rounded-full text-black dark:text-white hover:bg-black hover:dark:bg-white cursor-pointer
+           hover:text-white dark:hover:text-black"
           >
             <motion.div className="dark:group-hover:text-gray-900">
               <ArrowUpRight className="w-5 h-5" />
@@ -87,7 +85,7 @@ const Cards = () => {
     <div className="absolute inset-0 z-10" ref={containerRef}>
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1504093376055-b3094b674dcb"
         alt="Example image"
         rotate="6deg"
         top="20%"
@@ -96,7 +94,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b"
         alt="Example image"
         rotate="12deg"
         top="45%"
@@ -105,7 +103,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1675102850391-d8f88332d192"
         alt="Example image"
         rotate="-6deg"
         top="20%"
@@ -114,7 +112,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://images.unsplash.com/photo-1638401745143-8a4c44a50e91"
         alt="Example image"
         rotate="8deg"
         top="30%"
@@ -123,7 +121,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="https://plus.unsplash.com/premium_photo-1694475032847-e6a228961e98"
         alt="Example image"
         rotate="18deg"
         top="20%"

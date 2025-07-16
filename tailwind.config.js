@@ -17,11 +17,16 @@ export default {
       },
       animation: {
         spin: "spin 5s linear infinite",
+        "vertical-loop": "vertical-loop linear infinite",
       },
       keyframes: {
         spin: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(-360deg)" },
+        },
+        "vertical-loop": {
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-50%)" },
         },
       },
     },

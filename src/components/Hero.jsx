@@ -130,7 +130,7 @@ function Hero() {
                 },
               }}
             >
-              STUDIO
+              STUDIOS
             </motion.span>
           </motion.div>
         </motion.div>
