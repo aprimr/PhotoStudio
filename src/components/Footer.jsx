@@ -138,12 +138,12 @@ const Footer = () => {
             <p className="text-neutral-500 dark:text-gray-300 font-poppins">
               © {currentYear} Ghorahi. All rights reserved.
             </p>
-            <p className="text-neutral-500 dark:text-gray-300 font-poppins">
+            {/* <p className="text-neutral-500 dark:text-gray-300 font-poppins">
               Developed by{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-500">
                 aprimr
               </span>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
