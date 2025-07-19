@@ -13,7 +13,7 @@ function Navbar() {
       <div className="bg-white/80 dark:bg-black/70 backdrop-blur-md rounded-full shadow-md border border-gray-200/50 dark:border-gray-700/50 px-5 py-2.5 flex gap-5 sm:gap-6 items-center select-none">
         <DockItem label="Home" to="/" />
         <DockItem label="Gallery" to="/gallery" />
-        <DockItem label="About" to="/about" />
+        <DockItem label="Blog" to="/blog" />
         <DockItem label="Contact" to="/contact" />
         <ThemeToggle />
       </div>

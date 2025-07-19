@@ -22,7 +22,7 @@ export const DragCards = () => {
           duration: 0.6,
           ease: [0.16, 1, 0.3, 1],
         }}
-        className="text-center mb-4 md:mb-6 lg:mb-8"
+        className="text-center mb-8"
       >
         <div className="flex items-center justify-center gap-1">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 font-urbanist tracking-wide leading-tight">
@@ -69,8 +69,8 @@ export const DragCards = () => {
       </motion.div>
 
       <div className="relative grid min-h-[50vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 place-content-center overflow-hidden">
-        <h2 className="relative z-0 text-[11vw] font-black text-neutral-300/60 dark:text-neutral-700/50 md:text-[100px] font-calsans tracking-wide">
-          DELIGHT STUDIO
+        <h2 className="relative z-0 text-[11vw] text-center font-black text-neutral-300/60 dark:text-neutral-700/50 md:text-[100px] font-calsans tracking-wide">
+          SHUBHARAMBHA STUDIOS
         </h2>
         <Cards />
       </div>

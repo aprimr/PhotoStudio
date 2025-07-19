@@ -29,7 +29,7 @@ function AboutSection() {
           className="text-center mb-12 md:mb-20 lg:mb-24"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-urbanist tracking-wide leading-tight">
-            Our Journey
+            About US
           </h2>
           <div className="w-20 h-1 bg-blue-500 mx-auto mt-4 md:mt-6 rounded-full opacity-90" />
         </motion.div>
@@ -43,19 +43,24 @@ function AboutSection() {
             className="space-y-4 md:space-y-6 lg:space-y-8 order-2 lg:order-1"
           >
             <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-gray-100 font-raleway leading-snug">
-              Capturing Moments Since 2012
+              Introduction
             </h3>
             <div className="space-y-3 md:space-y-4 lg:space-y-5 text-gray-600 dark:text-gray-400 text-base md:text-lg font-poppins leading-relaxed">
               <p className="opacity-90">
-                At Delight Studio, we believe every photograph tells a story.
-                Founded by award-winning photographer Jane Doe, our studio has
-                become a creative hub for those who value authentic, timeless
-                imagery.
+                Shubharambha Studios is a creative photography and videography
+                studio based in Ghorahi, near Lakkhan Park. We focus on
+                capturing real emotions and timeless moments through our lens.
               </p>
               <p className="opacity-90">
-                Specializing in wedding photography, portrait sessions, and
-                commercial work, we blend technical precision with artistic
-                vision to create images that resonate.
+                Our photography services include bridal, engagement, commercial,
+                corporate, event and party coverage, graduation, and newborn
+                sessions. We also provide professional videography and studio
+                rentals.
+              </p>
+              <p className="opacity-90">
+                Whether you're celebrating a personal milestone or growing a
+                brand, we bring creativity, care, and quality to every project
+                we work on.
               </p>
             </div>
           </motion.div>

@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import { MapPin, Phone, Mail, Camera } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -9,11 +8,25 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { icon: <FaFacebook className="w-5 h-5" />, href: "#", label: "Facebook" },
+    {
+      icon: <FaInstagram className="w-5 h-5" />,
+      href: "#",
+      label: "Instagram",
+    },
+    { icon: <FaTiktok className="w-5 h-5" />, href: "#", label: "TikTok" },
+    { icon: <FaYoutube className="w-5 h-5" />, href: "#", label: "YouTube" },
+    { icon: <FaWhatsapp className="w-5 h-5" />, href: "#", label: "WhatsApp" },
+  ];
+
   const quickLinks = [
-    { name: "Gallery", path: "/gallery" },
-    { name: "About Us", path: "/about" },
-    { name: "Contact", path: "/contact" },
-    { name: "Blog", path: "/blog" },
+    { name: "Home", href: "/" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const services = [
@@ -24,43 +37,27 @@ const Footer = () => {
     "Photo Printing",
   ];
 
-  const contactInfo = [
-    { icon: <MapPin size={18} />, text: "Nepal" },
-    { icon: <Phone size={18} />, text: "+977 9812345678" },
-    { icon: <Mail size={18} />, text: "hello@studio.com" },
-  ];
-
-  const socialLinks = [
-    { icon: <FaFacebook size={20} />, name: "Facebook", url: "#" },
-    { icon: <FaInstagram size={20} />, name: "Instagram", url: "#" },
-    { icon: <FaTiktok size={20} />, name: "TikTok", url: "#" },
-    { icon: <FaYoutube size={20} />, name: "YouTube", url: "#" },
-    { icon: <FaWhatsapp size={20} />, name: "WhatsApp", url: "#" },
-  ];
-
   return (
-    <footer className="bg-white dark:bg-black pt-16">
-      <div className="max-w-7xl bg-black dark:bg-white mx-auto px-4 pt-10 pb-4 sm:px-6 lg:px-8 rounded-t-3xl">
+    <footer className="bg-white dark:bg-black border-t border-neutral-150 dark:border-neutral-800/90 text-sm sm:text-base select-none">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-8">
-          {/* Info */}
-          <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-white dark:text-black font-raleway">
-                DELIGHT STUDIO
-              </span>
-            </div>
-            <p className="text-gray-400 dark:text-gray-600 leading-relaxed">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+          {/* Studio Info */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h2 className="text-2xl font-bold text-black dark:text-white mb-4">
+              SHUBHARAMBHA STUDIOS
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
               Capturing life's precious moments with creativity and passion.
-              Professional photography services for all occasions in Nepal.
+              Professional photography services for all occasions.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
-                  href={social.url}
-                  className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300"
-                  aria-label={social.name}
+                  href={social.href}
+                  className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors text-gray-600 dark:text-gray-400"
+                  aria-label={social.label}
                 >
                   {social.icon}
                 </a>
@@ -70,18 +67,18 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
               Quick Links
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <NavLink
-                    to={link.path}
-                    className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300"
+                  <a
+                    href={link.href}
+                    className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
                   >
                     {link.name}
-                  </NavLink>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -89,13 +86,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
               Our Services
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-gray-400 dark:text-gray-600 hover:text-white hover:dark:text-black transition-colors duration-300 cursor-pointer">
+                  <span className="text-gray-600 dark:text-gray-400">
                     {service}
                   </span>
                 </li>
@@ -105,21 +102,48 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-white dark:text-black mb-6 uppercase tracking-wider">
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-4">
               Contact Us
             </h3>
-            <ul className="space-y-4">
-              {contactInfo.map((info, index) => (
-                <li key={index} className="flex items-start space-x-3">
-                  <span className="mt-0.5 text-gray-400 dark:text-gray-600">
-                    {info.icon}
-                  </span>
-                  <span className="text-gray-400 dark:text-gray-600">
-                    {info.text}
-                  </span>
-                </li>
-              ))}
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 text-gray-600 dark:text-gray-400 mt-1" />
+                <span className="text-gray-600 dark:text-gray-400">Nepal</span>
+              </li>
+              <li>
+                <a
+                  href="tel:+9779812345678"
+                  className="flex items-start gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <Phone className="w-4 h-4 mt-1" />
+                  <span>+977 9812345678</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@studio.com"
+                  className="flex items-start gap-3 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <Mail className="w-4 h-4 mt-1" />
+                  <span>hello@studio.com</span>
+                </a>
+              </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-neutral-150 dark:border-neutral-800/90 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-neutral-500 dark:text-gray-300 font-poppins">
+              © {currentYear} Ghorahi. All rights reserved.
+            </p>
+            <p className="text-neutral-500 dark:text-gray-300 font-poppins">
+              Developed by{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-500">
+                aprimr
+              </span>
+            </p>
           </div>
         </div>
       </div>

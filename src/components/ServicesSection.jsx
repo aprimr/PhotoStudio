@@ -1,42 +1,72 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { FaCameraRetro } from "react-icons/fa";
-import { Image, Clapperboard, Package, Printer, Users } from "lucide-react";
+import {
+  Users,
+  Camera,
+  Clapperboard,
+  Package,
+  Image,
+  Printer,
+  Building2,
+  Home,
+  Sparkles,
+  GraduationCap,
+} from "lucide-react";
+
 const services = [
   {
     icon: <Users />,
     title: "Event Photography",
     description:
-      "We capture your special events with beautiful photos you'll always remember.",
+      "Capture memories from birthdays, parties, and ceremonies with beautiful, candid shots.",
   },
   {
-    icon: <FaCameraRetro className="text-2xl" />,
+    icon: <Camera />,
     title: "Studio Portraits",
     description:
-      "Portraits of individuals, couples, and families in a comfortable studio.",
+      "Professional portraits in a well-lit studio for individuals, couples, and families.",
   },
   {
     icon: <Clapperboard />,
     title: "Videography",
     description:
-      "Videos for weddings, events, and businesses with smooth lighting and beautiful visuals.",
+      "Cinematic videos for weddings, events, and promos with smooth editing and storytelling.",
   },
   {
     icon: <Package />,
     title: "Product Photography",
-    description: "High quality photos that make your products shine.",
+    description:
+      "Clean, detailed product shots perfect for e-commerce, ads, and packaging.",
   },
   {
     icon: <Image />,
-    title: "Passport Photos",
+    title: "Portrait Photography",
     description:
-      "Passport size and ID photos that are official, clear, and print-ready within minutes.",
+      "Passport and ID photos that are official, clear, and printed instantly.",
   },
   {
-    icon: <Printer />,
-    title: "Printing & Framing",
+    icon: <Sparkles />,
+    title: "Wedding Photography",
     description:
-      "We print, frame, and laminate your photos using premium materials for lasting quality.",
+      "Elegant photography that tells the complete story of your wedding day.",
+  },
+  {
+    icon: <Building2 />,
+    title: "Corporate Photography",
+    description:
+      "Professional images for business profiles, teams, and branding needs.",
+  },
+  {
+    icon: <GraduationCap />,
+    title: "Graduation Photography",
+    description:
+      "Celebrate your academic milestone with studio or campus graduation portraits.",
+  },
+  {
+    icon: <Home />,
+    title: "Studio Rentals",
+    description:
+      "Fully equipped studio rental for photographers, content creators, and video teams.",
   },
 ];
 

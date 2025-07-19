@@ -3,16 +3,28 @@ import ReactPlayer from "react-player";
 import Camera from "../assets/camera.png";
 import Hero1 from "../assets/hero-1.jpeg";
 import HeroVideo from "../assets/herovideo.mp4";
+import { Clapperboard, Sparkles, Video, Airplay } from "lucide-react";
 
 function Hero() {
   return (
     <div className="w-full h-screen bg-white dark:bg-black flex flex-col justify-center items-center relative overflow-hidden select-none">
-      {/* Background glow effects - static */}
+      {/* Background glow effects*/}
       <div>
         <div className="absolute top-[28%] left-[30%] w-96 h-64 rounded-full bg-blue-100/40 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
         <div className="absolute top-[33%] right-[30%] w-96 h-64 rounded-full bg-blue-100/40 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
         <div className="absolute bottom-[11%] left-[27%] w-64 h-64 rounded-full bg-blue-100/80 dark:bg-gray-600 blur-3xl rotate-12 z-0" />
       </div>
+
+      {/* Background Icons */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      >
+        <Video className="absolute top-[13%] left-[10%] w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-neutral-500 dark:text-neutral-200 -rotate-12 opacity-20" />
+        <Clapperboard className="absolute bottom-[40%] right-[11%] w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-neutral-500 dark:text-neutral-200 rotate-12 opacity-20" />
+        <Airplay className="absolute bottom-[10%] left-[10%] w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 text-pink-400 dark:text-pink-500 rotate-6 opacity-20" />
+      </motion.div>
 
       <div className="max-w-7xl w-full h-full flex flex-col justify-center items-center px-4 sm:px-6 md:px-8">
         {/* Floating Service Cards - Desktop */}
@@ -65,7 +77,32 @@ function Hero() {
           </div>
         </div>
 
-        {/* Animated Text */}
+        {/* Tag */}
+        <motion.div
+          initial={{ opacity: 0, y: -60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="absolute top-[9rem] w-full flex justify-center items-center text-black dark:text-white font-poppins z-10"
+        >
+          <div className="relative w-auto">
+            {/* Shadow */}
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-[calc(100%-20px)] h-2 rounded-full bg-gray-400/30 dark:bg-gray-500/20 blur-[4px] z-[-1]" />
+            <div className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-[calc(100%-10px)] h-1.5 rounded-full bg-gray-400/20 dark:bg-gray-500/15 blur-[3px] z-[-1]" />
+
+            <div className="w-full px-5 py-1.5 bg-gradient-to-r from-neutral-100 via-neutral-200 to-neutral-100 dark:from-neutral-950 dark:via-neutral-800 dark:to-neutral-950  border border-neutral-700/20 dark:border-neutral-600/50 rounded-full backdrop-blur-sm shadow-sm hover:shadow-md transition-all duration-300">
+              <p className="text-sm font-medium tracking-wide bg-gradient-to-r from-neutral-700 to-neutral-600 dark:from-neutral-300 dark:to-neutral-200 bg-clip-text text-transparent">
+                Every Moment,{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-cyan-500 to-blue-500">
+                  Beautifully
+                </span>{" "}
+                Captured{" "}
+                <Sparkles className="inline-block align-middle h-4 w-4 text-yellow-500" />
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Name */}
         <motion.div
           className="absolute top-[12rem] w-full text-center"
           initial="hidden"
@@ -79,7 +116,7 @@ function Hero() {
           }}
         >
           <motion.div
-            className="text-[3rem] sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[10rem] font-semibold text-black dark:text-white font-calsans tracking-tight leading-none whitespace-nowrap"
+            className="text-[2rem] sm:text-6xl md:text-7xl lg:text-[8rem] xl:text-[8rem] font-semibold text-black dark:text-white font-calsans tracking-tight leading-none whitespace-nowrap"
             variants={{
               hidden: { opacity: 0, y: 40, scale: 0.95 },
               visible: {
@@ -111,9 +148,9 @@ function Hero() {
                 },
               }}
             >
-              DELIGHT
+              SHUBHARAMBHA
             </motion.span>
-            <span className="inline-block mx-2 sm:mx-4 opacity-0">..</span>
+            <span className="inline-block opacity-0">.</span>
             <motion.span
               className="inline-block"
               variants={{
